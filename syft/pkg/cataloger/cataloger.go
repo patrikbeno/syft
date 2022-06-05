@@ -20,6 +20,7 @@ import (
 	"github.com/anchore/syft/syft/pkg/cataloger/rpmdb"
 	"github.com/anchore/syft/syft/pkg/cataloger/ruby"
 	"github.com/anchore/syft/syft/pkg/cataloger/rust"
+	"github.com/anchore/syft/syft/pkg/cataloger/sbom"
 	"github.com/anchore/syft/syft/source"
 )
 
@@ -46,6 +47,7 @@ func ImageCatalogers(cfg Config) []Cataloger {
 		apkdb.NewApkdbCataloger(),
 		golang.NewGoModuleBinaryCataloger(),
 		dotnet.NewDotnetDepsCataloger(),
+		sbom.NewSBOMCataloger(),
 	}
 }
 
@@ -66,6 +68,7 @@ func DirectoryCatalogers(cfg Config) []Cataloger {
 		rust.NewCargoLockCataloger(),
 		dart.NewPubspecLockCataloger(),
 		dotnet.NewDotnetDepsCataloger(),
+		sbom.NewSBOMCataloger(),
 	}
 }
 
@@ -87,5 +90,6 @@ func AllCatalogers(cfg Config) []Cataloger {
 		rust.NewCargoLockCataloger(),
 		dart.NewPubspecLockCataloger(),
 		dotnet.NewDotnetDepsCataloger(),
+		sbom.NewSBOMCataloger(),
 	}
 }
