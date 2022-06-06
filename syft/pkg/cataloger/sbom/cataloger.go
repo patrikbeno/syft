@@ -18,7 +18,6 @@ import (
 // NewSBOMCataloger returns a new SBOM cataloger object loaded from saved SBOM JSON.
 func NewSBOMCataloger() *common.GenericCataloger {
     globParsers := map[string]common.ParserFn{
-        "**/syft.json":   parseSyftJson,
         "**/*.syft.json": parseSyftJson,
         "**/bom.json":    parseCyclonedxJson,
         "**/bom.xml":     parseCyclonedxXml,
